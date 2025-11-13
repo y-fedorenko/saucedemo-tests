@@ -1,0 +1,87 @@
+.vs/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.log
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Build output directories
+out/
+publish/
+artifacts/
+
+# .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NGen files
+*.ni.dll
+*.ni.exe
+
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Azure
+.csx/
+*.build.csdef
+ecf/
+rcf/
+
+# Others
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.userprefs
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Mac OS system files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+
+# Publish profiles
+*.pubxml
+*.publishproj
+
+# Database files
+*.mdf
+*.ldf
+
+# Backup & report files from VS
+*.bak
+*.Backup
+*.Report.*
+
+# Node/npm if used in frontend projects
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Tooling artifacts
+*.coverage
+*.coveragexml
+*.TestResult.xml
+
+appsettings.Development.json
+secrets.json
+
