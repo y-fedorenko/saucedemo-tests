@@ -19,9 +19,18 @@ namespace Saucedemo.CLL
                 default:
                     {
                         var service = ChromeDriverService.CreateDefaultService();
-                        ChromeOptions options = new();
-                        options.AddArgument("disable-infobars");
+                        var options = new ChromeOptions();
+
+                        options.AddArgument("--disable-infobars");
                         options.AddArgument("--incognito");
+                        options.AddArgument("--disable-autofill");
+                        options.AddArgument("--disable-password-generation");
+                        options.AddArgument("--disable-save-password-bubble");
+                        options.AddUserProfilePreference("autofill.profile_enabled", false);
+                        options.AddUserProfilePreference("autofill.credit_card_enabled", false);
+                        options.AddUserProfilePreference("autofill.address_enabled", false);
+                        options.AddUserProfilePreference("credentials_enable_service", false);
+                        options.AddUserProfilePreference("profile.password_manager_enabled", false);
 
                         return new ChromeDriver(service, options, TimeSpan.FromSeconds(30));
                     }
