@@ -1,14 +1,18 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Saucedemo.BLL
 {
+    
     public class LoginPage
     {
         private readonly IWebDriver _driver;
+        private readonly WebDriverWait _wait;
 
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
+            _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
         }
 
         private IWebElement UsernameInputText => _driver.FindElement(By.CssSelector("#user-name"));
@@ -53,6 +57,7 @@ namespace Saucedemo.BLL
 
         public string GetErrorMessageText()
         {
+            _wait.Until(d => ErrorMessage.Displayed);
             return ErrorMessage.Text;
         }
     }

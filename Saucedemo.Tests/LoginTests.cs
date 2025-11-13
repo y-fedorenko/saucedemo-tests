@@ -4,55 +4,84 @@ using Saucedemo.CLL;
 
 namespace Saucedemo.Tests
 {
-    public class LoginTests : IDisposable
+    public class LoginTest1 : IDisposable
     {
         private IWebDriver driver;
         private LoginPage loginPage;
 
-        public LoginTests()
+        public LoginTest1()
         {
             driver = WebDriverSelector.CreateWebDriver(Configuration.BrowserType);
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            loginPage = new LoginPage(driver);
         }
 
         [Fact]
         public void EmptyCredentials_TriggersError_UsernameIsRequired()
         {
-            loginPage = new LoginPage(driver);
             loginPage.TypeUsername("randomstring");
             loginPage.TypePassword("randomstring");
-            Thread.Sleep(1000);
+            Thread.Sleep(800);
             loginPage.ClearInputs();
             loginPage.ClickLogin();
-            Thread.Sleep(1000);
             string errorText = loginPage.GetErrorMessageText();
             Assert.Equal("Epic sadface: Username is required", errorText);
+        }
+
+        public void Dispose()
+        {
+            Thread.Sleep(1000);
+            driver.Quit();
+        }
+    }
+    public class LoginTest2 : IDisposable
+    {
+        private IWebDriver driver;
+        private LoginPage loginPage;
+
+        public LoginTest2()
+        {
+            driver = WebDriverSelector.CreateWebDriver(Configuration.BrowserType);
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            loginPage = new LoginPage(driver);
         }
 
         [Fact]
         public void EmptyPasswordInput_TriggersError_PasswordIsRequired()
         {
-            loginPage = new LoginPage(driver);
             loginPage.LoginAs("username", "");
-            Thread.Sleep(1000);
             string errorText = loginPage.GetErrorMessageText();
             Assert.Equal("Epic sadface: Password is required", errorText);
         }
 
+        public void Dispose()
+        {
+            Thread.Sleep(1000);
+            driver.Quit();
+        }
+    }
+    public class LoginTest3 : IDisposable
+    {
+        private IWebDriver driver;
+        private LoginPage loginPage;
+
+        public LoginTest3()
+        {
+            driver = WebDriverSelector.CreateWebDriver(Configuration.BrowserType);
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            loginPage = new LoginPage(driver);
+        }
+         
         [Fact]
         public void ValidLogin_ShouldNavigateToInventoryPage()
         {
-            loginPage = new LoginPage(driver);
             var inventoryPage = loginPage.LoginAs("standard_user", "secret_sauce");
-
             Assert.Equal("Swag Labs", inventoryPage.GetTitleText());
         }
 
         public void Dispose()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
             driver.Quit();
         }
     }

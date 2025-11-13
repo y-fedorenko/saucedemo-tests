@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Xunit.TestFramework("Meziantou.Xunit.ParallelTestFramework", "Meziantou.Xunit.ParallelTestFramework")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Saucedemo.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a94d6aac4093c73e8486606ace893173163c312e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72a5e8ffe3289ce4b3646d083b20c7f6b7e4a27c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Saucedemo.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Saucedemo.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

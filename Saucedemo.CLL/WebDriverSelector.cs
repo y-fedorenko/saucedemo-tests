@@ -31,8 +31,10 @@ namespace Saucedemo.CLL
                         options.AddUserProfilePreference("autofill.address_enabled", false);
                         options.AddUserProfilePreference("credentials_enable_service", false);
                         options.AddUserProfilePreference("profile.password_manager_enabled", false);
-
-                        return new ChromeDriver(service, options, TimeSpan.FromSeconds(30));
+                        var driver = new ChromeDriver(service, options, TimeSpan.FromSeconds(30));
+                        driver.Manage().Window.Maximize();
+                        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+                        return driver;
                     }
             }
         }
