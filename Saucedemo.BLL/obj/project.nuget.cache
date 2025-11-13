@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TfXPkqgIRqM=",
+  "dgSpecHash": "coTjXY1e+/8=",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Documents\\5.Epam\\FinalTask\\Project\\Saucedemo.BLL\\Saucedemo.BLL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\selenium.webdriver\\4.38.0\\selenium.webdriver.4.38.0.nupkg.sha512"
+  ],
   "logs": []
 }
