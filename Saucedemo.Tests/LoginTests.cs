@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using Saucedemo.BLL;
 using Saucedemo.CLL;
+using FluentAssertions;
 
 namespace Saucedemo.Tests
 {
@@ -19,6 +20,7 @@ namespace Saucedemo.Tests
             log.Info("Clicked login button with empty credentials.");
             string errorText = loginPage.GetErrorMessageText();
             log.Info($"Captured error message: '{errorText}'");
+            errorText.Should().Be("Epic sadface: Username is required");
             Assert.Equal("Epic sadface: Username is required", errorText);
             log.Info("Assertion passed: Username required message displayed correctly.");
         }
@@ -30,14 +32,11 @@ namespace Saucedemo.Tests
         public void EmptyPasswordInput_TriggersError_PasswordIsRequired()
         {
             log.Info("Running test: EmptyPasswordInput_TriggersError_PasswordIsRequired");
-
             loginPage.LoginAs("username", "");
             log.Info("Attempted login with username but empty password.");
-
             string errorText = loginPage.GetErrorMessageText();
             log.Info($"Captured error message: '{errorText}'");
-
-            Assert.Equal("Epic sadface: Password is required", errorText);
+            errorText.Should().Be("Epic sadface: Password is required");
             log.Info("Assertion passed: Password required message displayed correctly.");
         }
     }
@@ -48,15 +47,12 @@ namespace Saucedemo.Tests
         public void ValidLogin_ShouldNavigateToInventoryPage()
         {
             log.Info("Running test: ValidLogin_ShouldNavigateToInventoryPage");
-
             var inventoryPage = loginPage.LoginAs("standard_user", "secret_sauce");
             log.Info("Logged in using valid credentials.");
-
             string title = inventoryPage.GetTitleText();
             log.Info($"Inventory page title: '{title}'");
-
-            Assert.Equal("Swag Labs", title);
-            log.Info("Assertion passed: Navigated successfully to the Inventory page.");
+            title.Should().Be("Swag Labs");
+           log.Info("Assertion passed: Navigated successfully to the Inventory page.");
         }
     }
 }
