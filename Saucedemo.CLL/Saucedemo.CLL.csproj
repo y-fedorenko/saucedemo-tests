@@ -17,4 +17,10 @@
     <ProjectReference Include="..\Saucedemo.BLL\Saucedemo.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AppSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
