@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Saucedemo.CLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5757acafb20d9fd01eb381fdda95dd68f51578ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cf091b15a171c0a13b0f836365026d7b04596e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Saucedemo.CLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Saucedemo.CLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
