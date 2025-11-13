@@ -18,7 +18,7 @@ namespace Saucedemo.CLL
                 .Build();
 
             BrowserType = configuration["BrowserType"] ?? "Chrome";
-            AppUrl = configuration["ApplicationUrl"] ?? string.Empty;
+            AppUrl = configuration["ApplicationUrl"] ?? "www.saucedemo.com";
         }
     }
 }
