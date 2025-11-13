@@ -9,7 +9,6 @@ namespace Saucedemo.BLL
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
-            //driver.Navigate().GoToUrl("www.saucedemo.com");
         }
 
         private IWebElement UsernameInputText => _driver.FindElement(By.CssSelector("#user-name"));
